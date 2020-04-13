@@ -15,5 +15,3 @@ jobs:
       run: |
         CUR_DIR=$(pwd)
         echo Current Directory is $CUR_DIR
-    - name: See File System
-      run: ls -R /
