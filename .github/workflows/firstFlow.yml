@@ -15,3 +15,5 @@ jobs:
       run: |
         CUR_DIR=$(pwd)
         echo Current Directory is $CUR_DIR
+    - name: Find Repo
+      run: find / -name app.py
