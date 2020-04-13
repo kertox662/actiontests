@@ -5,12 +5,6 @@ jobs:
   First-Job:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        
-    
-      fail-fast: true
-
     steps:
     - name: Get Repo
       uses: actions/checkout@v2
