@@ -1,12 +1,19 @@
 on: push
+name: Test Workflow 1
 
 jobs:
   First-Job:
     runs-on: ubuntu-latest
     steps:
-    - name: Step 1
+    - name: Make File
       run: |
         echo Making File
         touch myfile.txt
-    - name: Step 2
+    - name: See Files
       run: ls -a
+    - name: Get PWD
+      run: |
+        CUR_DIR=$(pwd)
+        echo Current Directory is $CUR_DIR
+    - name: See File System
+      run: ls -R /
