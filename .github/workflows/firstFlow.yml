@@ -23,3 +23,6 @@ jobs:
     
     - name: Run Container
       run: docker run --rm -v $(pwd):/usr/src/myapp -w /usr/src/myapp python:latest python app.py
+    
+    - name: Check Python
+      run: python3 -V
