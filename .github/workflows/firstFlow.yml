@@ -4,6 +4,13 @@ name: Test Workflow 1
 jobs:
   First-Job:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        
+    
+      fail-fast: true
+
     steps:
     - name: Get Repo
       uses: actions/checkout@v2
@@ -21,8 +28,8 @@ jobs:
         CUR_DIR=$(pwd)
         echo Current Directory is $CUR_DIR
     
-    - name: Run Container
-      run: docker run --rm -v $(pwd):/usr/src/myapp -w /usr/src/myapp python:latest python app.py
+    # - name: Run Container
+    #   run: docker run --rm -v $(pwd):/usr/src/myapp -w /usr/src/myapp python:latest python app.py
     
     - name: Check Python
       run: python3 -V

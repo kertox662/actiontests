@@ -1,0 +1,28 @@
+on: push
+name: Run Python App
+
+jobs:
+  Check_Env:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check Python
+      run: python3 -V
+
+  Run_App:
+    needs: Check_Env
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        args: [1,2,3,4,5,6,7,8,9,10]
+    
+      fail-fast: true
+
+    steps:
+    - name: Get Repo
+      uses: actions/checkout@v2
+    
+    - name: Run App
+      run: python3 app.py ${{matrix.args}}
