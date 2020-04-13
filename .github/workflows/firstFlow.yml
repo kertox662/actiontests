@@ -26,3 +26,9 @@ jobs:
     
     - name: Check Python
       run: python3 -V
+    
+    - name: "Check C/C++"
+      run: gcc -v; echo ""; g++ -v
+    
+    - name: Check Go
+      run: go version
