@@ -20,3 +20,6 @@ jobs:
       run: |
         CUR_DIR=$(pwd)
         echo Current Directory is $CUR_DIR
+    
+    - name: Run Container
+      run: docker run --rm -v $(pwd):/usr/src/myapp -w /usr/src/myapp python:latest python app.py
